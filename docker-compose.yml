@@ -2,12 +2,12 @@ version: "3.9"
 services:
   app:
     build:
-      dockerfile: Dockerfile
+      dockerfile: ./docker/service/Dockerfile
       context: .
       target: dev
     volumes:
-      - .:/opt/app/api
+      - ./codebase:/opt/app/api
     environment:
       API_SERVER_ADDR: ":3000"
     ports:
-      - "3000:3000"
+      - "${APP_PORT}:3000"
