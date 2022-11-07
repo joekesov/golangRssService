@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/joekesov/golangRssService/rss"
+
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 )
@@ -64,4 +66,8 @@ func (s *APIServer) defaultRoute(w http.ResponseWriter, r *http.Request) {
 func (s *APIServer) otherRoute(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("Other thing"))
+
+	url := []string{"https://feeds.fireside.fm/bibleinayear/rss"}
+
+	rss.Parse(url)
 }

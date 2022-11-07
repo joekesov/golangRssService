@@ -6,7 +6,8 @@ import (
 	"syscall"
 
 	// Make sure you change this line to match your module
-	"github.com/joekesov/go-and-compose/apiserver"
+	"github.com/joekesov/golangRssService/apiserver"
+
 	"github.com/sirupsen/logrus"
 	cli "github.com/urfave/cli/v2"
 )
